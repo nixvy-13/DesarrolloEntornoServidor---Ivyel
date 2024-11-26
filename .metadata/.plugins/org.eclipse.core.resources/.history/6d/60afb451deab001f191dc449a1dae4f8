@@ -1,0 +1,35 @@
+package com.example.saludo;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+public class FormPersona {
+	@NotNull
+	@Size(min=2, max=30)
+	private String nombre;
+
+	@NotNull
+	@Min(18)
+	private Integer edad;
+
+	public String getName() {
+		return this.nombre;
+	}
+
+	public void setName(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Integer getAge() {
+		return edad;
+	}
+
+	public void setAge(Integer edad) {
+		this.edad = edad;
+	}
+
+	public String toString() {
+		return "Person(Name: " + this.nombre + ", Age: " + this.edad + ")";
+	}
+}

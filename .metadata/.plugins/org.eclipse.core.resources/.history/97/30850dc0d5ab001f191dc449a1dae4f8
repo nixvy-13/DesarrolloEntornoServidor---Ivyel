@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p th:if="${errorMsg}==null" th:text="${errorMsg}"></p>
+    <form  th:action="@{/!saludo}" method="post">
+        <label>Tu nombre porfi: </label>
+        <input type="text" name="nombre">
+        <input type="submit" value="pulsa">
+    </form>
+</body>
+</html>

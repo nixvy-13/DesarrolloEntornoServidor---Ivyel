@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p>Consigue tu saludo aquí</p>
+	<form action="/saludo">
+		<input type="text" name="nombre"><button type="submit">Enviar</button>
+	</form>
+</body>
+</html>

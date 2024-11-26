@@ -1,0 +1,4 @@
+<form action="/hola">
+	<label for="nombre" value:"Nombre: "></label>
+	<input type="text" name="name"/>	
+</form>

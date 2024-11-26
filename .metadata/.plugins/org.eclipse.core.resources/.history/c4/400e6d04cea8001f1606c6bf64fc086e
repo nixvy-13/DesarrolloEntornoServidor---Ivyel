@@ -1,0 +1,13 @@
+package com.example.saludo;
+
+import org.springframework.boot.SpringApplication;
+
+@SpringBootApplication
+public class SaludoApp {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SaludoApp.class, args);
+
+	}
+
+}
