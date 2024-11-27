@@ -7,10 +7,12 @@
 </head>
 <body>
     <p th:if="${errMsg}!=null" th:text="${errMsg}"></p>
-    <form th:action="@{/saludo}" method="post">
-        <label>Tu nombre por favor: </label>
-        <input type="text" name="nombre">
-        <input type="submit" value="Enviar">
+    <form th:action="@{/imc}" method="post">
+        <label>Tu peso por favor: </label>
+        <input type="text" name="peso">
+		<label>Tu altura por favor: </label>
+		<input type="text" name="altura">
+		<input type="submit" value="Enviar">
     </form>
 </body>
 </html>

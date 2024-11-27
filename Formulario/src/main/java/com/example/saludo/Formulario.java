@@ -13,14 +13,28 @@ String inicio(@RequestParam(name="errMsg", required=false) String errMsg, Model 
 	modelo.addAttribute("errMsg", errMsg);
 	return "form";
 }
-@PostMapping("/saludo")
-public String procesaForm(@RequestParam(name="nombre", required=false) String nombre, Model modelo) {
-	if(nombre==null||nombre.isBlank()) {
+@PostMapping("/imc")
+public String procesaForm(@RequestParam(name="altura", required=false) double altura,
+												@RequestParam(name="peso", required=false) double peso,
+												Model modelo) {
+	if((altura<=0||altura>250)||(peso<=0||peso>=100)) {
 		modelo.addAttribute("errMsg", "El nombre no puede estar vacio");
 		//return "redirect:/?errMsg=\"El nombre no puede estar vacio\"";
 		return "form";
 	}else {
-	modelo.addAttribute("nombre", nombre);
-	return  "saludo";}
+	String imc = "";
+	double alt1 = (altura%100);
+	double alt_fin = alt1*alt1;
+	if(peso/alt_fin < 18.5) {
+		imc = "Bajo";
+	}else if(peso/alt_fin >=18.5 && peso/alt_fin < 25) {
+		imc = "Normal";
+	}else if(peso/alt_fin>=25&&peso/alt_fin<=30) {
+		imc = "Sobrepeso";
+	}else {
+		imc = "Obeso";
+	}
+	modelo.addAttribute("imc", imc);
+	return  "imc";}
 }
 }

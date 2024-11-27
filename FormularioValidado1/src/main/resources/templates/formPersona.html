@@ -1,20 +1,20 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
     <body>
-        <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+        <form action="#" th:action="@{/}" th:object="${formPersona}" method="post">
             <table>
                 <tr>
-                    <td>Name:</td>
-                    <td><input type="text" th:field="*{name}" /></td>
-                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                    <td>Nombre:</td>
+                    <td><input type="text" th:field="*{nombre}" /></td>
+                    <td th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">Error en el nombre</td>
                 </tr>
                 <tr>
-                    <td>Age:</td>
-                    <td><input type="text" th:field="*{age}" /></td>
-                    <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+                    <td>Edad:</td>
+                    <td><input type="text" th:field="*{edad}" /></td>
+                    <td th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">Error en la edad</td>
                 </tr>
                 <tr>
-                    <td><button type="submit">Submit</button></td>
+                    <td><button type="submit">Enviar</button></td>
                 </tr>
             </table>
         </form>

@@ -9,24 +9,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+@Controller
 public class ControladorFormValido1 implements WebMvcConfigurer{
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/results").setViewName("results");
+		registry.addViewController("/resultados").setViewName("resultados");
 	}
 
 	@GetMapping("/")
-	public String showForm(FormPersona personForm) {
-		return "form";
+	public String showForm(FormPersona formPersona) {
+		return "formPersona";
 	}
 
 	@PostMapping("/")
-	public String checkPersonInfo(@Valid FormPersona personForm, BindingResult bindingResult) {
+	public String checkPersonInfo(@Valid FormPersona formPersona, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
-			return "form";
+			return "formPersona";
 		}
 
-		return "redirect:/results";
+		return "redirect:/resultados";
 	}
 }
